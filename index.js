@@ -81,7 +81,7 @@ app.put('/api/projects/:id',(req,res)=>{
     const index = projects.findIndex(p => p.id === id);
     if(index !== -1){
         projects[index] = project;
-        res.send({"status":"User updated."})
+        res.send({"status":"Project updated."})
     }
     res.send({"status":"Project not found. Could not update."})
 })
@@ -102,11 +102,11 @@ app.post('/api/projects/',(req,res)=>{
     const project = req.body;
     console.log(project);
     projects.push(project);
-    res.send({"status":"User updated."})
+    res.send({"status":"Project added."})
 })
 
 app.post('/api/users/',(req,res)=>{
     const user = req.body;
     users.push(user);
-    res.send({"status":"User updated."})
+    res.send({"status":"User added."})
 })
