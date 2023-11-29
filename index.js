@@ -11,6 +11,14 @@ app.listen(port, () => console.log(`http://${host}:${port}`))
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(__dirname + '/'));
+
+
+// Vue App
+app.get('/',(req,res)=>{
+    res.redirect('vue-demo.html');
+});
+
 
 //******* GET APIs **********/
 // Get one project by id
